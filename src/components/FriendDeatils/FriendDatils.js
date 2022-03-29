@@ -13,11 +13,11 @@ const FriendDatils = () => {
     let {friendId} = useParams();
     return (
         <div>
-            <h1>This is the friend deatils of length: {friendId}</h1>
+            <h1>This is the friend details of length: {friendId}</h1>
             <h2>{friends.name}</h2>
             <h3>{friends.email}</h3>
-            <h4>{friends.address}</h4>
-            <p><small>{friends.city}</small></p>
+            {/* <h4>{friends.address}</h4> */}
+            <p><small>{friends.address?.city}</small></p>
         </div>
     );
 };

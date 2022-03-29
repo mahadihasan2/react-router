@@ -7,6 +7,8 @@ import { Route, Routes } from 'react-router-dom';
 import Global from './components/Global/Global';
 import Header from './components/Header/Header';
 import FriendDatils from './components/FriendDeatils/FriendDatils';
+import Posts from './components/Posts/Posts';
+import PostDetails from './components/PostDetails/PostDetails';
 
 function App() {
   return (
@@ -17,6 +19,9 @@ function App() {
         <Route path='/'element={<Home></Home>}></Route>
         <Route path='/friends' element={<Friends></Friends>}></Route>
         <Route path='/friend/:friendId' element={<FriendDatils></FriendDatils>}></Route>
+        <Route path='posts' element={<Posts></Posts>}>
+          <Route path=':postId' element={<PostDetails></PostDetails>}></Route>
+        </Route>
         <Route path='/About' element={<About></About>}></Route>
         <Route path='*' element={<Global></Global>}></Route>
       </Routes>
