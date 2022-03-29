@@ -1,23 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import Home from './components/Home/Home';
+import Friends from './components/Friends/Friends';
+import About from './components/About/About';
+import { Route, Routes } from 'react-router-dom';
+import Global from './components/Global/Global';
+import Header from './components/Header/Header';
+import FriendDatils from './components/FriendDeatils/FriendDatils';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <Header></Header>
+      <Routes>
+        <Route path='/'element={<Home></Home>}></Route>
+        <Route path='/friends' element={<Friends></Friends>}></Route>
+        <Route path='/friend/:friendId' element={<FriendDatils></FriendDatils>}></Route>
+        <Route path='/About' element={<About></About>}></Route>
+        <Route path='*' element={<Global></Global>}></Route>
+      </Routes>
     </div>
   );
 }
